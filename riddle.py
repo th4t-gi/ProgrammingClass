@@ -11,9 +11,8 @@ riddles = [
 
 def printRiddle(riddles):
     rididx = 0
-    print(riddles[0])
-    for string, i in enumerate(riddles[rididx]):
-        print(i)
+    for i, string in enumerate(riddles[rididx]):
+        print(string, i, "HIIIIIII")
         if type(string) == list:
             answer = input()
             if answer == string[0] or (not string[0]):
