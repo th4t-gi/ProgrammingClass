@@ -1,6 +1,9 @@
 import os, art, time
 
-for i in art.animation:
-    os.system('cls')
-    print(i)
-    time.sleep(.5),
+start = time.time()
+for i, el in enumerate(art.animation):
+    os.system('clear')
+    print(el['text'])
+    time.sleep(el['speed']*.8),
+
+print(time.time()-start)
