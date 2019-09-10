@@ -1,3 +1,7 @@
+# Judd Brau
+# Period 7
+# animation.py
+
 import os, art, time
 
 start = time.time()
