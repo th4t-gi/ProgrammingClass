@@ -4,6 +4,7 @@
 import os, art, time, platform
 
 start = time.time()
+
 for i, el in enumerate(art.animation):
     if platform.system() == "Windows":
         os.system('cls')
@@ -12,4 +13,5 @@ for i, el in enumerate(art.animation):
     print(el['text'])
     time.sleep(el['speed']*.8),
 
+print(len(art.animation))
 print(time.time()-start)
