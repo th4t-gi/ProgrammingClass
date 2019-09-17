@@ -20,7 +20,7 @@ def genHex(center, r):
         Point(center[0]+a, center[1]-b)
     )
 
-def smile(size, ex, win):
+def smile(size, ex, h, w, win):
     a,b = 250,250;
     eyeCol = color_rgb(75, 135, 196)
 
@@ -41,8 +41,20 @@ def smile(size, ex, win):
     eye1.draw(win)
     eye2.draw(win)
 
+    mouth = Oval(Point(250-(w/2), 300-(h/2)), Point(250+(w/2), 300+(h/2)))
+    mouth.setFill('black')
+    mouth.draw(win)
+
     if ex:
-        smile = 0
+        hid = Oval(Point(250-(w/2), 307-(h/2)), Point(250+(w/2), 307+(h/2)))
+        hid.setFill(color_rgb(224, 157, 81))
+        hid.setOutline(color_rgb(224, 157, 81))
+        hid.draw(win)
+    else:
+        hid = Oval(Point(250-(w/2), 293-(h/2)), Point(250+(w/2), 293+(h/2)))
+        hid.setFill(color_rgb(224, 157, 81))
+        hid.setOutline(color_rgb(224, 157, 81))
+        hid.draw(win)
 
 def main():
     win = GraphWin("Window 1", 500, 500)
@@ -52,7 +64,7 @@ def main():
     # hex1 = genHex((100, 100), 100)
     # hex1.draw(win)
 
-    face = smile(100, 0, win)
+    face = smile(100, 1, 40, 80, win)
     # face.draw(win)
 
     win.getMouse()
